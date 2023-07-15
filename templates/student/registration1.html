@@ -1,0 +1,122 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> {% block title %}{% endblock title %} | Resume Analyser</title>
+    <link rel="stylesheet" href="{% static './static/basecss.css' %}">
+    <link rel="shortcut icon" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<style>
+    .navbar {
+        background-color: #575A89;
+    }
+
+    .navbar-collapse {
+        background-color: #DED8F8;
+        color: white;
+        margin: 3%;
+    }
+
+    .btn-primary {
+        background-color: #575A89;
+        border-color: white;
+        margin: 1%;
+        display: inline-block
+    }
+
+    .btn:hover {
+        background-color: #b4aadf;
+        color: #4a4f8c;
+        border: 1px solid #5f64ac;
+    }
+
+    form .btn {
+        background-color: #797dc1;
+        border-color: white;
+        color: white;
+    }
+
+    .background-image {
+        /* margin-top: 0% !important; */
+        width: 100%;
+        height: 50rem;
+
+
+        background-size: cover;
+        background-image: url("{% static 'My project-1.png' %}");
+        position: fixed;
+    }
+  
+
+    .buttons {
+        text-align: center;
+        padding: 7rem;
+        margin-left: 3rem;
+        font-size: larger;
+        z-index: 1;
+
+    }
+    .buttons a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .h5 {
+        font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Resume Analyser</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">contact</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="background-image">
+        
+        <!-- <img src="{% static 'My project-1.png' %}" alt="My image"> -->
+
+        <div class="buttons">
+            <h5>A platform for job seekers to explore the recruiting companies!!</h5>
+            <h5>New User?</h5>
+            <button type="button" class="btn btn-primary"><a href="login/">login</a></button>
+            <h5>OR</h5>
+            <button type="button" class="btn btn-primary"><a href="register/">Register</a></button>
+            <h5>Shortlisting of applicants made easy for companies!!!</h5>
+        </div>
+    </div>
+    {% block body %}{% endblock body %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

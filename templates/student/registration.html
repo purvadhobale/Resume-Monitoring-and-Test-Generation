@@ -1,0 +1,52 @@
+{% extends "student/base.html" %}
+{% block content %}
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href=" ">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/login">Login<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Registration</a>
+        <a class="nav-item nav-link" href="#">Pricing</a>
+        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container mb-3 py-4">
+   
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Register</h5>
+        <form action="/student_register/" method="POST">
+          {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+          </div>
+          <div class="mb-3">
+            <label for="number" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Your Number">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your password">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Confirm password</label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="confirm password">
+          </div>
+          <button type="Submit" class="btn btn-primary">Submit</button>
+    </div>
+    
+      </div>
+    </div>  
+{% endblock content %}

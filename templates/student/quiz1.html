@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form method="POST" action="/calculate_score/">
+        <input type="email" name="email" placeholder="email">
+        {% csrf_token %}
+        {% for question in questions %}
+            <h3>{{ question.question_text }}</h3>
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
+                <label>{{ choice.choice_text }}</label><br>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

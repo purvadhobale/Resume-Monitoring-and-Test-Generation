@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+
+  <style>
+    body {
+      background-color: white;
+    }
+
+    .btn {
+      background-color: #575A89;
+      color: white;
+      border: 1px solid #575A89;
+    }
+    .btn1 a{
+      color: white !important;
+      text-decoration: none !important;
+    }
+    .btn1:hover a{
+      color: #575A89 !important;
+    }
+
+    .btn:hover {
+      background-color: #DED8F8;
+      color: #575A89;
+      border: 1px solid #575A89;
+    }
+
+    .card {
+      background-color: #DED8F8;
+      padding: 5px;
+      align-items: center;
+      display: flex;
+      position: relative;
+    }
+
+    .card .card-title {
+      color: #575A89;
+      font-weight: bolder;
+    }
+
+    .card .mb-3 {
+      color: #575A89;
+      font-weight: 500;
+    }
+
+    .tab-content {
+      display: flex;
+    }
+
+    .tab- {
+      display: flex;
+    }
+
+    .card-text {
+      color: #575A89;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+      color: white !important;
+      background-color: #575A89 !important;
+    }
+
+    .navshover a {
+      color: white;
+      
+    }
+    .navshover a:hover{
+       border: 2px solid #575A89 !important;
+       box-shadow: 2px 2px 2px #575A89 !important;
+    }
+    .navshover{
+      background-color: #76799cb3;
+      height: 100vh;
+    }
+    header{
+      background-color: rgba(84, 84, 160, 0.835);
+      text-align: center;
+      font-size: 30px;
+      color: white;text-transform: capitalize;
+      text-shadow: 3px 3px 3px black;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  {% block content %}
+
+  {% csrf_token %}
+  <header><div class="container-fluid">Company Dashoboard</div></header>
+  <div class="container-fluid">
+<div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">Score Shortlist</h5>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      
+                      <th scope="col">Email</th>
+                      <th scope="col">Score</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for x in score %}
+                    <tr>
+                      
+                      <td>{{x.email}}</td>
+                      <td>{{x.score}}</td>
+                      
+        
+                    </tr>
+                    {% endfor %}
+        
+                  </tbody>
+                </table>
+                
+               
+              </div>
+            </div>
+            <button type="submit" class="btn btn1"><a href="/company/final_shortlist/">Score</a></button>
+           
+            <!-- <button type="submit" class="btn btn1"><a href="/company/score_shortlist/">Score ShortList</a></button> -->
+            
+          </div>
+        </div>
+      </div>
+      
+      
+
+
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+</body>
+
+</html>
